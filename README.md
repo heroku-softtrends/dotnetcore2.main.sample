@@ -34,7 +34,7 @@ In **project.json**
 You can deploy this ASP.Net MVC website on Heroku server by clicking below button
 <br/>
 <br/>
-<a href="https://heroku.com/deploy?template=https://github.com/heroku-softtrends/dotnetmvc.sample/tree/master">
+<a href="https://heroku.com/deploy?template=https://github.com/heroku-softtrends/heroku.sample.dotnetcore2/tree/master">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 
