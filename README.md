@@ -1,5 +1,5 @@
-# .NET Core Buildpack with Heroku Support 
-## (Heroku Button with ASP.NET Core MVC Sample)
+# Softtrends .NET Core 2.x Buildpack for Heroku
+## (Sample Code with Heroku Button deploying ASP.Net Core 2.x)
 
 This uses the .Net Core Buildpack provided by Softtends<br>
 
