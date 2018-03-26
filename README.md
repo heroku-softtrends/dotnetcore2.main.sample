@@ -1,13 +1,13 @@
 # Softtrends .NET Core 2.x Buildpack for Heroku
 ## (Sample Code with Heroku Button deploying ASP.Net Core 2.x)
 
-This uses the .Net Core Buildpack provided by Softtends<br>
+This uses the .Net Core 2.x Buildpack provided by Softtends and adds full support for Heroku<br>
 
 We've made some big updates in this release, so it’s **important** that you spend a few minutes to learn what’s new.
 
 You've created a new ASP.NET Core MVC project. [Learn what's new](https://go.microsoft.com/fwlink/?LinkId=518016)
 
-You need to make the following changes in your Program.cs and project.json to deploy on Heroku
+You need to make the following changes in your Program.cs to deploy on Heroku
 <br/>
 In **Program.cs**
 
@@ -15,21 +15,14 @@ In **Program.cs**
 <br/>
 public static void Main(string[] args
 {<br/>
-            var host = new WebHostBuilder()
-                .UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
+            {
+            BuildWebHost(args).Run();
+        }
+                public static IWebHost BuildWebHost(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                **.UseUrls(args[0])**
                 .Build();
-
-            host.Run();
 }<br/>
-In **project.json**
-
-*   Add a new property called "outputName": "Your_ProjectName" in buildOptions  
-*   Remove scripts section. It has prepublish and postpublish actions which are not needed
-<br/>
 <br/>
 You can deploy this ASP.Net MVC website on Heroku server by clicking below button
 <br/>
@@ -40,7 +33,7 @@ You can deploy this ASP.Net MVC website on Heroku server by clicking below butto
 
 ## This application consists of:
 
-*   Sample pages using ASP.NET Core MVC
+*   Sample pages using ASP.NET Core 2.x MVC
 *   [Gulp](https://go.microsoft.com/fwlink/?LinkId=518007) and [Bower](https://go.microsoft.com/fwlink/?LinkId=518004) for managing client-side libraries
 *   Theming using [Bootstrap](https://go.microsoft.com/fwlink/?LinkID=398939)
 
@@ -71,4 +64,3 @@ You can deploy this ASP.Net MVC website on Heroku server by clicking below butto
 *   [Publish to Microsoft Azure Web Apps](https://go.microsoft.com/fwlink/?LinkID=398609)
 
 We would love to hear your [feedback](https://go.microsoft.com/fwlink/?LinkId=518015)
-"# sample.dotnetcore.main" 
