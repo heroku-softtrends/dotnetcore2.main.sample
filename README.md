@@ -7,24 +7,8 @@ We've made some big updates in this release, so it’s **important** that you sp
 
 You've created a new ASP.NET Core MVC project. [Learn what's new](https://go.microsoft.com/fwlink/?LinkId=518016)
 
-You need to make the following changes in your Program.cs to deploy on Heroku
 <br/>
-In **Program.cs**
-
-*   Add UseUrls method and pass args[0] as parameter to start your app. Because Heroku web dyno will start with dynamic port after sucessful deployment. We need to use the same port in code behind also then only your app will start and listen on that port else dotnet runtime will set default port 5000. Thereby we pass port number as parameter with url in Procfile
-<br/>
-public static void Main(string[] args
-{<br/>
-            {
-            BuildWebHost(args).Run();
-        }
-                public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .Build();
-}<br/>
-<br/>
-You can deploy this ASP.Net Core MVC website on Heroku server by clicking below button
+You can deploy this ASP.Net Core MVC website on Heroku server by clicking the button below
 <br/>
 <br/>
 <a href="https://heroku.com/deploy?template=https://github.com/heroku-softtrends/dotnetcore2.main.sample/tree/master">
@@ -33,7 +17,7 @@ You can deploy this ASP.Net Core MVC website on Heroku server by clicking below 
 
 ## This application consists of:
 
-*   Sample pages using ASP.NET Core 2.x MVC
+*   Sample pages using ASP.NET Core 2.1 MVC
 *   [Gulp](https://go.microsoft.com/fwlink/?LinkId=518007) and [Bower](https://go.microsoft.com/fwlink/?LinkId=518004) for managing client-side libraries
 *   Theming using [Bootstrap](https://go.microsoft.com/fwlink/?LinkID=398939)
 
